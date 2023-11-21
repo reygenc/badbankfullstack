@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Card } from "./shared/Card";
 import signaturePic from "../pictures/signature.jpg";
 
-const baseUrl =
-  process.env.NODE_ENV === "production" ? "" : "http://localhost:4500";
+// const baseUrl =
+//   process.env.NODE_ENV === "production" ? "" : "http://localhost:4500";
 
 export function CreateAccount({
   initializeUser,

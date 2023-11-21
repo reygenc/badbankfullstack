@@ -29,7 +29,7 @@ const provider = new GoogleAuthProvider();
 const nullUser = { balance: 0 };
 
 function App() {
-  const baseUrl = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:4500';
+  // const baseUrl = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:';
 
   const [status, setStatus] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
