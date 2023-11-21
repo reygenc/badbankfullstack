@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card } from "./shared/Card";
 import signaturePic from "../pictures/signature.jpg";
 
-const baseUrl = '';
+const baseUrl = process.env.NODE_ENV === 'production' ? '' : 'http://localhost';
 
 export function CreateAccount({
   initializeUser,
