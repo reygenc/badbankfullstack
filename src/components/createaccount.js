@@ -54,16 +54,6 @@ export function CreateAccount({
   }
   
 
-    createWithFirebase(email, password);
-
-    const url = `${baseUrl}/account/create/${name}/${email}/${password}`;
-    await fetch(url);
-
-    await initializeUser(email, password);
-    setStatusMessage("Your account is created. It's time to explore!");
-    setShow(false);
-  }
-
   function googleLogMeIn() {
     setStatusMessage(googleLogin(true));
     setStatusMessage("Your account is created. It's time to explore!");
