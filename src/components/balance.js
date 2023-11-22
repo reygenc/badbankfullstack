@@ -23,7 +23,7 @@ export function Balance({ balance }) {
               padding: "100px",
             }}
           >
-            <h1>Your current balance is $ {balance}</h1>
+            <h1>Current Balance: ${balance}</h1>
           </div>
         </div>
       }
