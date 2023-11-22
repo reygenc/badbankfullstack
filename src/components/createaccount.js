@@ -37,6 +37,22 @@ export function CreateAccount({
       setStatusMessage("Error: Password must be at least 8 characters");
       return;
     }
+  
+    try {
+      createWithFirebase(email, password);
+  
+      const url = `${baseUrl}/account/create/${name}/${email}/${password}`;
+      await fetch(url);
+  
+      await initializeUser(email, password);
+      setStatusMessage("Your account is created. It's time to explore!");
+      setShow(false);
+    } catch (error) {
+      console.error("Firebase Authentication Error:", error);
+      setStatusMessage("Error creating account. Please try again.");
+    }
+  }
+  
 
     createWithFirebase(email, password);
 
