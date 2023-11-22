@@ -46,7 +46,7 @@ async function connectToMongo() {
 }
 
 // Call the connectToMongo function to establish the connection
-// connectToMongo();
+connectToMongo();
 
 async function test() {
     try {
@@ -111,7 +111,7 @@ async function login(email, password) {
     }
 }
 
-// fuction to adjust funds to an account
+// function to adjust funds to an account
 async function adjust(email, amount) {
     try {
         // Wait for the MongoDB connection to be established
