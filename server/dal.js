@@ -27,7 +27,7 @@ async function run() {
     }
 }
 run().catch(console.dir);
-// const url = 'mongodb://localhost:27017';
+
 let db = null;
 
 // Connect to MongoDB and initialize the 'db' variable
@@ -40,6 +40,7 @@ async function connectToMongo() {
 
         // Connect to the 'myproject' database
         db = client.db('fullstackbadbank');
+        console.log(db + ' is connected')
     } catch (err) {
         console.error('Error connecting to MongoDB:', err);
     }
@@ -54,7 +55,7 @@ async function test() {
         await run();
 
         if (!db) {
-            throw new Error('MongoDB connection is not established.');
+            throw new Error('Error from test: MongoDB connection is not established.');
         }
         console.log("connected to test")
     } catch (err) {
@@ -70,7 +71,7 @@ async function create(name, email, password) {
         await connectToMongo();
 
         if (!db) {
-            throw new Error('MongoDB connection is not established.');
+            throw new Error('Error from create: MongoDB connection is not established.');
         }
 
         const collection = db.collection('users');
@@ -90,7 +91,7 @@ async function login(email, password) {
         await connectToMongo();
 
         if (!db) {
-            throw new Error('MongoDB connection is not established.');
+            throw new Error('Error from login: MongoDB connection is not established.');
         }
 
         const collection = db.collection('users');
@@ -118,7 +119,7 @@ async function adjust(email, amount) {
         await connectToMongo();
 
         if (!db) {
-            throw new Error('MongoDB connection is not established.');
+            throw new Error('Error from adjust: MongoDB connection is not established.');
         }
 
         const collection = db.collection('users');
@@ -155,7 +156,7 @@ async function balance(email) {
         await connectToMongo();
 
         if (!db) {
-            throw new Error('MongoDB connection is not established.');
+            throw new Error('Error from balance: MongoDB connection is not established.');
         }
 
         const collection = db.collection('users');
@@ -182,7 +183,7 @@ async function all() {
         await connectToMongo();
 
         if (!db) {
-            throw new Error('MongoDB connection is not established.');
+            throw new Error('Error from all: MongoDB connection is not established.');
         }
 
         const collection = db.collection('users');
