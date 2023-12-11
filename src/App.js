@@ -84,9 +84,7 @@ function App() {
       });
   }
 
-  // duplicated on createaccount.js should be moved to shared folder when custom hook is created
   function googleLogin(createUser = false) {
-    console.log("google sign in clicked");
     const auth = getAuth();
     signInWithPopup(auth, provider)
       .then((result) => {

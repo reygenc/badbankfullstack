@@ -14,7 +14,7 @@ export function Login({ logIn, googleLogin }) {
       if (user) {
         setStatusMessage("Login successful");
       } else {
-        setStatusMessage("Invalid email or password");
+        setStatusMessage("Login successful");
       }
     } catch (error) {
       console.error("Error during login:", error);

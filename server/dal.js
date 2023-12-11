@@ -75,7 +75,7 @@ async function create(name, email, password) {
         }
 
         const collection = db.collection('users');
-        const doc = { name, email, password, balance: 0, role: "user" };
+        const doc = { name, email, password, balance: 0 };
         const result = await collection.insertOne(doc);
         return doc;
     } catch (err) {
@@ -168,7 +168,7 @@ async function balance(email) {
         }
 
         console.log(`user.balance: ${user.balance}`);
-        return "" + user.balance; //return a string instead of a number, numbers are error codes in "res.send"
+        return "" + user.balance; 
     } catch (err) {
         console.error(err);
         throw err; // Propagate the error
@@ -176,7 +176,7 @@ async function balance(email) {
 }
 
 // Function to retrieve all user documents from the 'users' collection
-// TODO: Stretch goal exclude password from the returned documents, change get to post and tell it to only send back the name and email and balance.
+
 async function all() {
     try {
         // Wait for the MongoDB connection to be established
@@ -193,7 +193,7 @@ async function all() {
         return docs;
     } catch (err) {
         console.error(err);
-        throw err; // Propagate the error
+        throw err; 
     }
 }
 
